@@ -2,7 +2,7 @@ define([
 	'jquery', 
 	'backbone', 
 	'underscore', 
-	'views/view'], 
+	'views/choosePetSpeciesView'], 
 function($, Backbone, _, mainView){
 	var Router = Backbone.Router.extend({
 		initialize: function(){
@@ -10,9 +10,9 @@ function($, Backbone, _, mainView){
 			Backbone.history.start();
 		},
 		routes: {
-			'': 'home'
+			'': 'choosePetSpecies'
 		},
-		'home': function(){
+		'choosePetSpecies': function(){
 			this.mainView.render();
 		}
 	});
