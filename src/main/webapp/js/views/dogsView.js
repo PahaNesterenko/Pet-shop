@@ -2,19 +2,22 @@ define([
         'jquery',
         'backbone',
         'underscore',
-        'models/model',
         'text!templates/dogsTemplate.html'],
-    function($, Backbone, _, model, template){
+    function($, Backbone, _, template){
         var View = Backbone.View.extend({
             el: '#main',
             initialize: function(){
-                this.model = new model({
-                    message: 'Hello World'
-                });
-                this.template = _.template( template, { model: this.model.toJSON() } );
+
+                this.template = _.template( template, {} );
             },
             render: function(){
-                $(this.el).append( this.template );
+                $(this.el).html( this.template );
+            },
+            events: {
+                'click #toMainPageButton': 'toMainPageButton',
+            },
+            toMainPageButton: function(){
+                Backbone.history.navigate('', true);
             }
         });
 

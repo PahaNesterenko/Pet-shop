@@ -11,7 +11,19 @@ define([
                 this.template = _.template( template, {} );
             },
             render: function(){
-                $(this.el).append( this.template );
+                $(this.el).html( this.template );
+            },
+            events: {
+                'click #catButton': 'catButton',
+                'click #dogButton': 'dogButton'
+            },
+            catButton: function(ev){
+                ev.preventDefault();
+                Backbone.history.navigate( 'catsRoute', true);
+            },
+            dogButton: function(ev){
+                ev.preventDefault();
+                Backbone.history.navigate( 'dogsRoute', true);
             }
         });
 
