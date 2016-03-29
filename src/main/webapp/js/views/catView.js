@@ -6,6 +6,7 @@ define([
     function($, Backbone, _, template){
         var View = Backbone.View.extend({
                 template: _.template(template),
+            tagName: "tr",
             initialize: function(){
 
                 console.log("init one cat");

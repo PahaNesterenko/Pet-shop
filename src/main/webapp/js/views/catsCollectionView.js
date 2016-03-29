@@ -6,7 +6,7 @@ define([
 'views/catView'],
     function($, Backbone, _, catCollection, catView){
         var View = Backbone.View.extend({
-            el: '#catsCollection',
+            el: '#catsTable',
             initialize: function(){
                 console.log('init cat collection view');
             },
