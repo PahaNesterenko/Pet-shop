@@ -5,10 +5,11 @@ define([
         'text!templates/choosePetSpecies.html'],
     function($, Backbone, _, template){
         var View = Backbone.View.extend({
-            el: '#main',
+            el: '#row',
             initialize: function(){
                 
                 this.template = _.template( template, {} );
+              return this;
             },
             render: function(){
                 $(this.el).html( this.template );
@@ -27,5 +28,5 @@ define([
             }
         });
 
-        return new View();
+        return View;
     });

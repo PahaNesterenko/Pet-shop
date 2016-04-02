@@ -6,7 +6,7 @@ define([
 'views/catsCollectionView'],
     function($, Backbone, _, template, catsCollectionView){
         var View = Backbone.View.extend({
-            el: '#main',
+            el: '#row',
             initialize: function(){
 
                 this.template = _.template( template, {} );
@@ -19,9 +19,9 @@ define([
                 'click #toMainPageButton': 'toMainPageButton',
             },
             toMainPageButton: function(){
-                Backbone.history.navigate('', true);
+                Backbone.history.navigate('choosePetSpecies', true);
             }
         });
 
-        return new View();
+        return View;
     });
